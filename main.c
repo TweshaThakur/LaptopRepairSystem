@@ -30,18 +30,18 @@ void check_hardware_issues() { // code to run a hardware diagnostic test
 
     // Check for issues and print the corresponding message
     if (test_result.cpu_status == 1) {
-        printf("CPU issue detected.\n");
+        printf("CPU issue detected.\n\n");
     }
     if (test_result.memory_status == 1) {
-        printf("Memory issue detected.\n");
+        printf("Memory issue detected.\n\n");
     }
     if (test_result.disk_status == 1) {
-        printf("Disk issue detected.\n");
+        printf("Disk issue detected.\n\n");
     }
 
     // If no issues found, print success message
     if (test_result.cpu_status == 0 && test_result.memory_status == 0 && test_result.disk_status == 0) {
-        printf("Hardware diagnostic test passed.\n");
+        printf("Hardware diagnostic test passed.\n\n");
     }
 
 
@@ -76,18 +76,18 @@ void check_software_issues()     // code to scan for software-related problems
 
     // Check for issues and print the corresponding message
     if (scan_result.virus_detected == 1) {
-        printf("Virus detected.\n");
+        printf("Virus detected.\n\n");
     }
     if (scan_result.malware_detected == 1) {
-        printf("Malware detected.\n");
+        printf("Malware detected.\n\n");
     }
     if (scan_result.system_file_corrupted == 1) {
-        printf("System file corrupted.\n");
+        printf("System file corrupted.\n\n");
     }
 
     // If no issues found, print success message
     if (scan_result.virus_detected == 0 && scan_result.malware_detected == 0 && scan_result.system_file_corrupted == 0) {
-        printf("Software scan passed.\n");
+        printf("Software scan passed.\n\n");
     }
 }
 
@@ -129,8 +129,8 @@ void repair_hardware_issues()     // code to provide instructions on how to fix 
     struct HardwareRepairInstructions repair_instructions = get_hardware_repair_instructions(cpu_issue, memory_issue, disk_issue);
 
     // Print the fix instructions and schedule repair instructions
-    printf("Fix instructions: %s\n", repair_instructions.fix_instructions);
-    printf("Schedule repair instructions: %s\n", repair_instructions.schedule_repair_instructions);
+    printf("Fix instructions: %s\n\n", repair_instructions.fix_instructions);
+    printf("Schedule repair instructions: %s\n\n", repair_instructions.schedule_repair_instructions);
 
 }
 
@@ -180,10 +180,10 @@ void repair_software_issues()    // code to provide instructions on how to fix s
     struct SoftwareRepairInstructions repair_instructions = get_software_repair_instructions(virus_detected, malware_detected, system_file_corrupted);
 
     // Print the repair instructions
-    printf("Repair instructions:\n");
-    printf("%s\n", repair_instructions.virus_removal_instructions);
-    printf("%s\n", repair_instructions.malware_removal_instructions);
-    printf("%s\n", repair_instructions.system_file_repair_instructions);
+    printf("Repair instructions:\n\n");
+    printf("%s\n\n", repair_instructions.virus_removal_instructions);
+    printf("%s\n\n", repair_instructions.malware_removal_instructions);
+    printf("%s\n\n", repair_instructions.system_file_repair_instructions);
 }
 
 /*********************************************************************************************************/
@@ -231,10 +231,10 @@ void upgrade_hardware()    // code to display a list of compatible hardware upgr
     struct HardwareUpgradeInstructions upgrade_instructions = get_hardware_upgrade_instructions(cpu_speed, memory_size, disk_size);
 
     // Print the upgrade instructions
-    printf("Upgrade instructions:\n");
-    printf("%s\n", upgrade_instructions.cpu_upgrade_instructions);
-    printf("%s\n", upgrade_instructions.memory_upgrade_instructions);
-    printf("%s\n", upgrade_instructions.disk_upgrade_instructions);
+    printf("Upgrade instructions:\n\n");
+    printf("%s\n\n", upgrade_instructions.cpu_upgrade_instructions);
+    printf("%s\n\n", upgrade_instructions.memory_upgrade_instructions);
+    printf("%s\n\n", upgrade_instructions.disk_upgrade_instructions);
 
 }
 
@@ -283,10 +283,10 @@ void upgrade_software()    // code to display a list of compatible software upgr
     struct SoftwareUpgradeInstructions upgrade_instructions = get_software_upgrade_instructions(os_version, app_version, driver_version);
 
     // Print the upgrade instructions
-    printf("Upgrade instructions:\n");
-    printf("%s\n", upgrade_instructions.operating_system_upgrade_instructions);
-    printf("%s\n", upgrade_instructions.application_upgrade_instructions);
-    printf("%s\n", upgrade_instructions.driver_upgrade_instructions);
+    printf("Upgrade instructions:\n\n");
+    printf("%s\n\n", upgrade_instructions.operating_system_upgrade_instructions);
+    printf("%s\n\n", upgrade_instructions.application_upgrade_instructions);
+    printf("%s\n\n", upgrade_instructions.driver_upgrade_instructions);
 }
 
 
@@ -324,7 +324,7 @@ int login() {
 
     for (i = 0; i < 10; i++) {
         if (strcmp(users[i].username, username) == 0 && strcmp(users[i].password, password) == 0) {
-            printf("Login successful!\n");
+            printf("\nLogin successful!\n\n");
             return found = 1;
         }
     }
@@ -366,7 +366,7 @@ int main()
         printf("\n");
         printf("1. Login\n");
         printf("2. Forgot password\n");
-        printf("3. Exit\n");
+        printf("3. Exit\n\n");
 
         printf("Enter your choice: ");
         scanf("%d", &choice);
@@ -395,7 +395,7 @@ int main()
 
 
                 do{
-                        printf("Laptop Repair System\n");
+                        printf("Laptop Repair System\n\n");
                         printf("1. Check for hardware issues\n");
                         printf("2. Check for software issues\n");
                         printf("3. Repair hardware issues\n");
@@ -403,7 +403,7 @@ int main()
                         printf("5. Upgrade hardware\n");
                         printf("6. Upgrade software\n");
                         printf("7. Exit\n");
-                        printf("Enter option: ");
+                        printf("\nEnter option: ");
                         scanf("%d", &option);
 
                         switch(option)
